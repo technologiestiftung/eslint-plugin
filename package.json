@@ -1,6 +1,6 @@
 {
 	"name": "@technologiestiftung/eslint-plugin",
-	"version": "0.1.0",
+	"version": "0.1.1-0",
 	"description": "ESLint plugin for Technologiestitung",
 	"type": "module",
 	"main": "index.js",
@@ -8,7 +8,11 @@
 		"test": "echo \"Error: no test specified\" && exit 0",
 		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint ."
 	},
-	"files": ["index.js", "README.md", "LICENSE"],
+	"files": [
+		"index.js",
+		"README.md",
+		"LICENSE"
+	],
 	"prettier": {
 		"tabWidth": 2,
 		"semi": true,
@@ -17,14 +21,21 @@
 		"printWidth": 80,
 		"overrides": [
 			{
-				"files": ["*.yml", "*.yaml"],
+				"files": [
+					"*.yml",
+					"*.yaml"
+				],
 				"options": {
 					"useTabs": false
 				}
 			}
 		]
 	},
-	"keywords": ["eslint", "eslint-plugin", "technologiestitung"],
+	"keywords": [
+		"eslint",
+		"eslint-plugin",
+		"technologiestitung"
+	],
 	"author": "ff6347 <hash@ff6347.email>",
 	"license": "MIT",
 	"devDependencies": {
