@@ -6,52 +6,45 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# {repo-template}
+# @Technologiestiftung/eslint-plugin
 
-## TODO (after you generated the repo)
+This is a sharable eslint plugin for the @technologiestiftung organization. Should be the basis for JS and TS. Still WIP. Currently we only have one rule that we stole from the [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import/blob/main/src/rules/no-default-export.js).
 
-- [ ] Review the content of the README.md and adjust to your liking
-- [ ] Read the README.md till the end and adjust the content licensing,
-      logos, etc (I know you stopped at tbd...)
-- [ ] Adjust the file [.github/CODEOWNERS](./.github/CODEOWNERS)
-- [ ] Adjust the files under [.github/ISSUE_TEMPLATE](./.github/ISSUE_TEMPLATE)
-- [ ] If you use staging and main branches use this template for [.github/renovate.json](./.github/renovate.json)
+> [!IMPORTANT]
+> We only support flat config!
 
-```json
-{
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>technologiestiftung/renovate-config"],
-	"baseBranches": ["staging"]
-}
-```
+Features:
 
-- [ ] Do you want to honor all kinds of contributions? Use [all-contributors](https://allcontributors.org/)
-
-```bash
-npx all-contributors-cli check
-npx all-contributors-cli add ff6347 doc
-```
-
-You can use it on GitHub just by commenting on PRs and issues:
-
-```plain
-@all-contributors please add @ff6347 for infrastructure, tests and code
-```
-
-- [ ] Add your project description
-- [ ] Get fancy shields at https://shields.io
+- no default exports
 
 ## Prerequisites
 
-tbd...
+- Node.js
+- eslint
 
 ## Installation
 
-tbd...
+```bash
+npm i @technologiestiftung/eslint-plugin --save-dev
+```
 
-## Usage or Deployment
+## Usage
 
-tbd...
+In your `eslint.config.js` file, add the following:
+
+```javascript
+import { plugin as technologiestiftungPlugin } from "@technologiestiftung/eslint-plugin";
+
+export default [
+	{
+		files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
+		rules: {
+			"@technologiestiftung/no-default-export": "error",
+		},
+		plugins: { "@technologiestiftung": technologiestiftungPlugin },
+	},
+];
+```
 
 ## Development
 
@@ -59,7 +52,9 @@ tbd...
 
 ## Tests
 
-tbd...
+TODO:
+
+see https://eslint.org/docs/latest/integrate/nodejs-api#ruletester
 
 ## Contributing
 
@@ -83,12 +78,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## Content Licensing
-
-Texts and content available as [CC BY](https://creativecommons.org/licenses/by/3.0/de/).
-
-Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
 
 ## Credits
 
@@ -119,3 +108,6 @@ Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
 </table>
 
 ## Related Projects
+
+- [@technologiestiftung/eslint-config](https://github.com/technologiestiftung/eslint-config)
+- https://github.com/import-js/eslint-plugin-import/blob/main/src/rules/no-default-export.js
