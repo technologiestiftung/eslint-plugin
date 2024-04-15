@@ -1,6 +1,6 @@
 {
 	"name": "@technologiestiftung/eslint-plugin",
-	"version": "0.1.1-0",
+	"version": "0.1.1",
 	"description": "ESLint plugin for Technologiestitung",
 	"type": "module",
 	"main": "index.js",
